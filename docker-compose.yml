@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+   file-indexer-api:
+     build:
+       context: .
+     volumes:
+       - .:/home/app/
+     working_dir: /home/app
+     tty: true
