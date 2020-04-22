@@ -4,6 +4,6 @@ services:
      build:
        context: .
      volumes:
-       - .:/home/app/
-     working_dir: /home/app
+       - .:/home/worker/
+     working_dir: /home/worker
      tty: true
