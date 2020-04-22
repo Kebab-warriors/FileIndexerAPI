@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Api
-from controllers.indexer_controller import IndexerController
-from controllers.search_controller import SearchController
+from file_indexer_api.controllers.indexer_controller import IndexerController
+from file_indexer_api.controllers.search_controller import SearchController
 
 app = Flask(__name__)
 api = Api(app)
