@@ -9,7 +9,7 @@ pylint = "*"
 [packages]
 flask = "*"
 flask-restful = "*"
-py4j = "*"
+rpyc = "*"
 
 [requires]
 python_version = "3.8"
