@@ -4,7 +4,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('path')
 
 class IndexerController(Resource):
-    def post(self):
-        args = parser.parse_args()
+  def post(self):
+    args = parser.parse_args()
 
-        return {'path': args['path']}
+    return {'path': args['path']}
