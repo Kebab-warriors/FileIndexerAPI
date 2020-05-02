@@ -1,19 +1,10 @@
-FROM python:3.8.2-alpine3.11
-
+FROM python:alpine3.11 as build-stage
+WORKDIR /home/app/
 RUN apk add --no-cache git \
-  && pip install --upgrade pip \
-  && adduser -D worker \
-  && pip install pipenv
+  && git clone https://github.com/KebabWarriors/FileIndexerAPI.git \
+  && cd FileIndexerAPI \
+  && pip install --install-option="--prefix=/install" -r requirements.txt
 
-USER worker
-
-WORKDIR /home/worker
-
-ENV PATH="/home/worker/.local/bin:${PATH}"
-
-COPY --chown=worker:worker Pipfile Pipfile
-RUN pipenv lock -r > requirements.txt
-RUN pip install --user -r requirements.txt
-
-COPY --chown=worker:worker . .
-
+FROM python:alpine3.11 as deploy-stage
+WORKDIR /home/app/
+COPY --from=build-stage /home/app/FileIndexerAPI/file_indexer_api/ /home/app/
