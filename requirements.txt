@@ -1,13 +1,13 @@
--i https://pypi.org/simple
-aniso8601==8.0.0
-click==7.1.1
+-i https://pypi.org/simple/
+aniso8601==9.0.1
+click==7.1.2
 flask-restful==0.3.8
 flask==1.1.2
 itsdangerous==1.1.0
-jinja2==2.11.2
+jinja2==2.11.3
 markupsafe==1.1.1
-plumbum==1.6.9
-pytz==2019.3
+plumbum==1.7.0
+pytz==2021.1
 rpyc==4.1.5
-six==1.14.0
+six==1.15.0
 werkzeug==1.0.1
